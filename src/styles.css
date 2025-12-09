@@ -1,3 +1,19 @@
+/* ====== LAYOUT GLOBAL & ROOT ====== */
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  background: #020617;
+  overflow-x: hidden;
+}
+
 /*================ LOGIN LAYOUT ==================*/
 * {
   box-sizing: border-box;
@@ -658,4 +674,157 @@
 .tx-status-pill--unpaid {
   background: rgba(248, 113, 113, 0.22);
   color: #fecaca;
+}
+
+/* ====== HAMBURGER & WRAPPER NAV ====== */
+/* Dipakai oleh MainLayout baru */
+
+.app-sidebar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* di desktop: nav wrapper seperti biasa (sidebar kolom) */
+.app-nav-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 1.5rem;
+}
+
+/* tombol hamburger: disembunyikan di desktop */
+.app-hamburger {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.2rem;
+}
+
+.app-hamburger-line {
+  width: 20px;
+  height: 2px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  margin: 3px 0;
+}
+
+/* ====== RESPONSIVE LAYOUT ====== */
+
+/* Tablet & layar sedang */
+@media (max-width: 1024px) {
+  .app-shell {
+    flex-direction: column;
+  }
+
+  .app-sidebar {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 1rem;
+  }
+
+  /* beri ruang kiri-kanan untuk konten */
+  .app-main {
+    padding: 1rem 1.25rem 1.5rem;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .app-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 30;
+    padding: 0.6rem 0.75rem;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .app-brand {
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+
+  /* tampilkan hamburger */
+  .app-hamburger {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* nav wrapper jadi dropdown di bawah bar */
+  .app-nav-wrapper {
+    position: absolute;
+    top: 52px; /* kira-kira tinggi bar atas */
+    left: 0;
+    right: 0;
+    background: rgba(15, 23, 42, 0.98);
+    border-bottom: 1px solid rgba(31, 41, 55, 0.9);
+    padding: 0.6rem 0.75rem 0.8rem;
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+    gap: 0.6rem;
+  }
+
+  .app-nav-wrapper--open {
+    transform: scaleY(1);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .app-nav {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .app-nav-section-title {
+    font-size: 0.7rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .app-nav-link {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.8rem;
+  }
+
+  .app-logout-btn {
+    width: 100%;
+    justify-content: center;
+    margin-top: 0.2rem;
+  }
+
+  /* di mobile konten agak masuk dari kiri-kanan */
+  .app-main {
+    padding-top: 4.2rem;  /* ruang di bawah bar fixed */
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .dashboard-badge {
+    align-self: flex-start;
+  }
+
+  .dashboard-card {
+    padding: 0.9rem 0.9rem;
+  }
 }
