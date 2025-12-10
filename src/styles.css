@@ -723,16 +723,27 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 0.8rem 1rem;
+    padding: 0.75rem 1.25rem;
   }
 
-  /* beri ruang kiri-kanan untuk konten */
+  /* konten punya jarak kiri-kanan */
   .app-main {
-    padding: 1rem 1.25rem 1.5rem;
+    padding: 1.25rem 1.5rem 1.75rem;
   }
 
+  /* dashboard: 1 kolom */
   .dashboard-grid {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .dashboard-card {
+    border-radius: 16px;
+  }
+
+  .event-form-card,
+  .event-table-wrapper,
+  .transaction-card {
+    border-radius: 16px;
   }
 }
 
@@ -744,7 +755,7 @@ body {
     left: 0;
     right: 0;
     z-index: 30;
-    padding: 0.6rem 0.75rem;
+    padding: 0.6rem 0.9rem;
     flex-direction: row;
     align-items: center;
     gap: 0.5rem;
@@ -755,7 +766,6 @@ body {
     margin-bottom: 0;
   }
 
-  /* tampilkan hamburger */
   .app-hamburger {
     display: inline-flex;
     flex-direction: column;
@@ -763,15 +773,14 @@ body {
     align-items: center;
   }
 
-  /* nav wrapper jadi dropdown di bawah bar */
   .app-nav-wrapper {
     position: absolute;
-    top: 52px; /* kira-kira tinggi bar atas */
+    top: 52px;
     left: 0;
     right: 0;
     background: rgba(15, 23, 42, 0.98);
     border-bottom: 1px solid rgba(31, 41, 55, 0.9);
-    padding: 0.6rem 0.75rem 0.8rem;
+    padding: 0.6rem 0.9rem 0.8rem;
     transform: scaleY(0);
     transform-origin: top;
     opacity: 0;
@@ -807,24 +816,136 @@ body {
     margin-top: 0.2rem;
   }
 
-  /* di mobile konten agak masuk dari kiri-kanan */
   .app-main {
-    padding-top: 4.2rem;  /* ruang di bawah bar fixed */
+    padding-top: 4.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
-    padding-bottom: 1.5rem;
+    padding-bottom: 1.75rem;
   }
 
+  /* Dashboard */
   .dashboard-header {
     flex-direction: column;
-    gap: 0.4rem;
+    gap: 0.35rem;
   }
 
-  .dashboard-badge {
-    align-self: flex-start;
+  .dashboard-title {
+    font-size: 1.2rem;
+  }
+
+  .dashboard-subtitle {
+    font-size: 0.85rem;
   }
 
   .dashboard-card {
     padding: 0.9rem 0.9rem;
+    border-radius: 14px;
+  }
+
+  /* Form event jadi 1 kolom */
+  .event-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .event-form-card,
+  .event-table-wrapper,
+  .transaction-card {
+    padding: 0.9rem 0.9rem 1rem;
+    border-radius: 14px;
+  }
+
+  /* ===== List Event: ubah row tabel jadi kartu ===== */
+  .event-table thead {
+    display: none;
+  }
+
+  .event-table,
+  .event-table tbody,
+  .event-table tr,
+  .event-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .event-table tr {
+    background: rgba(15, 23, 42, 0.8);
+    border-radius: 12px;
+    padding: 0.65rem 0.7rem 0.5rem;
+    margin-bottom: 0.7rem;
+    border: 1px solid rgba(31, 41, 55, 0.9);
+  }
+
+  .event-table td {
+    padding: 0.2rem 0;
+    font-size: 0.85rem;
+  }
+
+  .event-table td:nth-child(1) {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .event-table td:nth-child(2),
+  .event-table td:nth-child(3),
+  .event-table td:nth-child(4) {
+    color: #9ca3af;
+  }
+
+  .event-table td:nth-child(5) {
+    margin-top: 0.4rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.4rem;
+  }
+
+  .event-btn {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.75rem;
+  }
+
+  /* ===== Event Transaction: kartu juga ===== */
+  .transaction-table thead {
+    display: none;
+  }
+
+  .transaction-table,
+  .transaction-table tbody,
+  .transaction-table tr,
+  .transaction-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .transaction-table tr {
+    background: rgba(15, 23, 42, 0.8);
+    border-radius: 12px;
+    padding: 0.65rem 0.7rem 0.55rem;
+    margin-bottom: 0.7rem;
+    border: 1px solid rgba(31, 41, 55, 0.9);
+  }
+
+  .transaction-table td {
+    padding: 0.2rem 0;
+    font-size: 0.85rem;
+  }
+
+  .transaction-table td:nth-child(1) {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.1rem;
+  }
+
+  .transaction-table td:nth-child(2),
+  .transaction-table td:nth-child(3) {
+    color: #9ca3af;
+  }
+
+  .transaction-table td:nth-child(4) {
+    margin-top: 0.35rem;
+  }
+
+  .tx-status-pill {
+    font-size: 0.75rem;
   }
 }
