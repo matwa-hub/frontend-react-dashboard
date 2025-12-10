@@ -94,7 +94,7 @@ function DashboardPage() {
         <div>
           <h2 className="dashboard-title">Dashboard</h2>
           <p className="dashboard-subtitle">
-            Ringkasan data event (dummy) untuk kebutuhan testing.
+            Ringkasan data event (dummy).
           </p>
         </div>
         <span className="dashboard-badge">Today&apos;s overview</span>

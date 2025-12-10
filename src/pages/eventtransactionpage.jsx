@@ -1,21 +1,21 @@
 const transactions = [
   {
     id: 1,
-    userName: "Budi",
+    userName: "Denis",
     eventName: "React Workshop",
     registeredAt: "2025-12-10",
     paymentStatus: "Paid",
   },
   {
     id: 2,
-    userName: "Siti",
+    userName: "Rafly",
     eventName: "React Workshop",
     registeredAt: "2025-12-11",
     paymentStatus: "Unpaid",
   },
   {
     id: 3,
-    userName: "Andi",
+    userName: "Restin",
     eventName: "NodeJS Bootcamp",
     registeredAt: "2025-12-09",
     paymentStatus: "Paid",
